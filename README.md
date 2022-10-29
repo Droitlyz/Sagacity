@@ -1,2 +1,2 @@
 # Nothing
-Beautiful Emptiness
+Beautiful Emptiness ✨
