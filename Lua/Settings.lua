@@ -1,4 +1,4 @@
-local Settings = SagacityHub:AddTab("Settings");
+local Settings = self:AddTab("Settings");
 local SettingsMenu = Settings:AddLeftGroupboxForSettings("Menu");
 SettingsMenu:AddLabelForSettings("Background Color"):AddColorPickerForSettings("SettingsMenuBackgroundColor", {
     Default = Library.BackgroundColor
