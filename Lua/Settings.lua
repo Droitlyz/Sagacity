@@ -38,21 +38,28 @@ local Settings = {} do
             Options.SettingsMenuInlineColor:SetValueRGB(Color3.fromRGB(10, 30, 40));
             Options.SettingsMenuOutlineColor:SetValueRGB(Color3.fromRGB(0, 0, 5));
             Options.SettingsMenuFontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-            self.Library.BackgroundColor = Options.SettingsMenuBackgroundColor.Value
-            self.Library.MainColor = Options.SettingsMenuMainColor.Value
-            self.Library.AccentColor = Options.SettingsMenuAccentColor.Value
-            self.Library.InlineColor = Options.SettingsMenuInlineColor.Value
-            self.Library.OutlineColor = Options.SettingsMenuOutlineColor.Value
-            self.Library.FontColor = Options.SettingsMenuFontColor.Value
-            self.Library.AccentColorDark = Library:GetDarkerColor(Library.AccentColor)
+            self.Library.BackgroundColor = Options.SettingsMenuBackgroundColor.Value;
+            self.Library.MainColor = Options.SettingsMenuMainColor.Value;
+            self.Library.AccentColor = Options.SettingsMenuAccentColor.Value;
+            self.Library.InlineColor = Options.SettingsMenuInlineColor.Value;
+            self.Library.OutlineColor = Options.SettingsMenuOutlineColor.Value;
+            self.Library.FontColor = Options.SettingsMenuFontColor.Value;
+            self.Library.AccentColorDark = Library:GetDarkerColor(self.Library.AccentColor);
             self.Library:UpdateColorsUsingRegistry()
         end);
-        MenuBox:AddToggleForSettings("SettingsMenuKeybinds", {Text = "Show Keybinds Menu"})
-        Toggles.SettingsMenuKeybinds:OnChanged(function() self.Library:SetKeybindVisibility(Toggles.SettingsMenuKeybinds.Value) end);
-        MenuBox:AddToggleForSettings("SettingsMenuWatermark", {Text = "Show Watermark"})
-        Toggles.SettingsMenuWatermark:OnChanged(function() self.Library:SetWatermarkVisibility(Toggles.SettingsMenuWatermark.Value) end);
+        MenuBox:AddToggleForSettings("SettingsMenuKeybinds", {Text = "Show Keybinds Menu"});
+        Toggles.SettingsMenuKeybinds:OnChanged(function()
+            self.Library:SetKeybindVisibility(Toggles.SettingsMenuKeybinds.Value);
+        end);
+        MenuBox:AddToggleForSettings("SettingsMenuWatermark", {Text = "Show Watermark"});
+        Toggles.SettingsMenuWatermark:OnChanged(function()
+            self.Library:SetWatermarkVisibility(Toggles.SettingsMenuWatermark.Value);
+        end);
         MenuBox:AddButtonForSettings("Unload", function() self.Library:Unload() end)
-        self.Library:OnUnload(function() warn("Unloaded");self.Library.Unloaded = true end);
+        self.Library:OnUnload(function()
+            warn("Unloaded");
+            self.Library.Unloaded = true
+        end);
 
     end;
 
