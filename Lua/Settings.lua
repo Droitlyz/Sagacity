@@ -57,7 +57,7 @@ local Settings = {} do
     end;
 
     function Settings:createSettingsMenu(MenuBox)
-        assert(self.Library)
+        assert(self.Library,'Must set Settings.Library first!)
         self:createMenuBox(MenuBox)
     end
 
