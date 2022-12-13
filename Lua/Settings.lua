@@ -1,5 +1,5 @@
 local Settings = {} do
-
+    Settings.Library = nil
     function Settings:createMenuBox(MenuBox)
         MenuBox:AddLabelForSettings("Background Color"):AddColorPickerForSettings("SettingsMenuBackgroundColor", {Default = self.Library.BackgroundColor});
         MenuBox:AddLabelForSettings("Main Color"):AddColorPickerForSettings("SettingsMenuMainColor", {Default = self.Library.MainColor});
