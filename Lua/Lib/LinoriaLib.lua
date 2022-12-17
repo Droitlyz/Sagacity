@@ -4618,11 +4618,11 @@ function Library:CreateWindow(...)
         end;
         
         function Tab:AddLeftGroupboxForSettings(Name, Info)
-            return Tab:AddGroupbox({ Side = 1; Name = Name; });
+            return Tab:AddGroupboxForSettings({ Side = 1; Name = Name; });
         end;
 
         function Tab:AddRightGroupboxForSettings(Name, Info)
-            return Tab:AddGroupbox({ Side = 2; Name = Name; });
+            return Tab:AddGroupboxForSettings({ Side = 2; Name = Name; });
         end;
 
         function Tab:AddTabbox(Info)
