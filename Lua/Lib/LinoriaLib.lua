@@ -4244,6 +4244,10 @@ function Library:CreateWindow(...)
         ZIndex = 1;
         Parent = ScreenGui;
     });
+    
+    Library:AddToRegistry(Outer, {
+        BackgroundColor3 = 'OutlineColor';
+    });
 
     Library:MakeDraggable(Outer, 25);
 
@@ -4297,6 +4301,7 @@ function Library:CreateWindow(...)
 
     Library:AddToRegistry(MainSectionInner, {
         BackgroundColor3 = 'BackgroundColor';
+        BorderColor3 = 'OutlineColor';
     });
 
     local TabArea = Library:Create('Frame', {
@@ -4457,9 +4462,10 @@ function Library:CreateWindow(...)
                 ZIndex = 4;
                 Parent = BoxOuter;
             });
-
+            
             Library:AddToRegistry(BoxInner, {
                 BackgroundColor3 = 'BackgroundColor';
+                BorderColor3 = 'OutlineColor';
             });
 
             local Highlight = Library:Create('Frame', {
@@ -4548,6 +4554,7 @@ function Library:CreateWindow(...)
 
             Library:AddToRegistry(BoxInner, {
                 BackgroundColor3 = 'BackgroundColor';
+                BorderColor3 = 'OutlineColor';
             });
 
             local Highlight = Library:Create('Frame', {
